@@ -2,6 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Button, TextInput, Alert } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
+import { Fontisto } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
 
 export default function App() {
 
@@ -14,7 +18,7 @@ export default function App() {
     { id: 6, uri: 'https://cdn1.iconfinder.com/data/icons/creative-process-14/512/Review-512.png', name: 'Reviews' },
   ])
 
-  const [change, setChange] = useState('Register')
+  const [change, setChange] = useState('Register');
 
   const clicarBotao = () => {
     setChange('Registered');
@@ -35,8 +39,12 @@ export default function App() {
           <View>
             <Entypo name="magnifying-glass" size={28} color="black" />
           </View>
-          <View style={styles.search}>
-            <TextInput style={styles.search} placeholder='Buscar...'></TextInput>
+          <View>
+            <TextInput
+              style={styles.search}
+              placeholder=' Buscar...'
+            >
+            </TextInput>
           </View>
         </View>
       </>
@@ -48,25 +56,40 @@ export default function App() {
       <>
         <View style={styles.button}>
           <Button
-          title={change}
-          color='#8AEAE5'
-          style={styles.register}
-          onPress={clicarBotao}
+            title={change}
+            color='#8AEAE5'
+            onPress={clicarBotao}
           />
-          <View></View>
+          <View style={styles.login}></View>
           <Button
-          title='Login'
-          color='#E33488'
-          style={styles.login}
-          onPress={() => Alert.alert('Login complete!')} />
+            title='Login'
+            color='#E33488'
+            onPress={() => Alert.alert('Login complete!')} />
           <Text style={styles.legend}>Or login with Social Media</Text>
         </View>
       </>
     )
   }
 
-  return (
+  function ItemComponent({ item }) {
+    return (
+      <>
+        <View style={styles.icons}>
+          <TouchableOpacity>
+            <View style={styles.item}>
+              <Image
+                style={styles.icon}
+                source={{ uri: item.uri }} />
+            </View>
+          </TouchableOpacity>
+          <Text style={styles.name}>{item.name}</Text>
+        </View>
 
+      </>
+    )
+  }
+
+  return (
     <View style={styles.container}>
       <FlatList
         style={styles.flatlist}
@@ -74,22 +97,25 @@ export default function App() {
         keyExtractor={(item) => item.id}
         data={lista}
         ListHeaderComponent={HeaderComponent}
-        renderItem={({ item }) => (
-          <View style={styles.icons}>
-            <TouchableOpacity>
-              <View style={styles.item}>
-                <Image
-                  style={styles.icon}
-                  source={{ uri: item.uri }} />
-              </View>
-            </TouchableOpacity>
-            <Text style={styles.name}>{item.name}</Text>
-          </View>
-        )}
+        renderItem={ItemComponent}
         ListFooterComponent={FooterComponent}
       />
+      <View style={styles.barra}>
+        <TouchableOpacity>
+          <Fontisto name="home" size={30} color="#FF1493" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Octicons name="person" size={30} color="#FF1493" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <AntDesign name="staro" size={30} color="#FF1493" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Foundation name="list" size={30} color="#FF1493" />
+        </TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
-    </View>
+    </View >
   )
 
 }
@@ -103,7 +129,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   logo: {
-    marginTop: 40,
+    marginTop: 20,
     width: 410,
     height: 180,
   },
@@ -140,13 +166,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginLeft: 100,
     width: 200,
-
-  },
-  register: {
-    marginBottom: 80,
   },
   login: {
-    marginTop: 40,
+    marginTop: 20,
   },
   legend: {
     color: '#C0C0C0',
@@ -171,5 +193,18 @@ const styles = StyleSheet.create({
     height: 38,
     marginLeft: 5,
     borderRadius: 100 / 6,
+    marginBottom: 20,
+    borderWidth: 1,
+
   },
+  barra: {
+    alignItems: 'center',
+    borderTopWidth: 2,
+    borderTopColor: '#DCDCDC',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#FFFAFA',
+    position: 'relative',
+    height: 55,
+  }
 });
