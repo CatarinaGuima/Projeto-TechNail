@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Button, TextInput, Alert } from 'react-native';
-import { Entypo, Fontisto,  Octicons, AntDesign, Foundation } from '@expo/vector-icons';
+import { Entypo, Fontisto, Octicons, AntDesign, Foundation } from '@expo/vector-icons';
 
 export default function App() {
 
@@ -15,31 +15,25 @@ export default function App() {
   ])
 
   const [change, setChange] = useState('Register');
-
   const clicarBotao = () => {
     setChange('Registered');
   }
-
   const [searchText, setSearchText] = useState('');
   const [list, setList] = useState(lista);
 
   useEffect(() => {
-    if(searchText === ''){
+    if (searchText === '') {
       setList(lista);
     } else {
       setList(
-        list.filter((i) => {
-          if(i.name.indexOf(searchText) > -1){
-            return true;
-          } else {
-            return false;
-          }
-        })
+        list.filter(
+          (i) => i.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+        )
       );
     }
   }, [searchText]);
-  
- function HeaderComponent() {
+
+  function HeaderComponent() {
     return (
       <>
         <View style={styles.header}>
