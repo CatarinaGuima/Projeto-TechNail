@@ -1,11 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Button, TextInput, Alert } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-import { Fontisto } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { Foundation } from '@expo/vector-icons';
+import { Entypo, Fontisto,  Octicons, AntDesign, Foundation } from '@expo/vector-icons';
 
 export default function App() {
 
@@ -24,7 +20,26 @@ export default function App() {
     setChange('Registered');
   }
 
-  function HeaderComponent() {
+  const [searchText, setSearchText] = useState('');
+  const [list, setList] = useState(lista);
+
+  useEffect(() => {
+    if(searchText === ''){
+      setList(lista);
+    } else {
+      setList(
+        list.filter((i) => {
+          if(i.name.indexOf(searchText) > -1){
+            return true;
+          } else {
+            return false;
+          }
+        })
+      );
+    }
+  }, [searchText]);
+  
+ function HeaderComponent() {
     return (
       <>
         <View style={styles.header}>
@@ -43,6 +58,8 @@ export default function App() {
             <TextInput
               style={styles.search}
               placeholder=' Buscar...'
+              value={searchText}
+              onChangeText={(t) => setSearchText(t)}
             >
             </TextInput>
           </View>
@@ -95,7 +112,7 @@ export default function App() {
         style={styles.flatlist}
         numColumns={3}
         keyExtractor={(item) => item.id}
-        data={lista}
+        data={list}
         ListHeaderComponent={HeaderComponent}
         renderItem={ItemComponent}
         ListFooterComponent={FooterComponent}
