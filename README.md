@@ -1,10 +1,8 @@
  <h1 align="center">
- ![logo2](https://user-images.githubusercontent.com/110750750/231247078-9a7e6ba9-9e4c-491a-8978-57c4c7bb0756.png)
-
- 
- <p> Projeto-TechNail 💅 </p> 
+  <p> Projeto TechNail 💅 </p> 
  </h1>
  
+ ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp; O aplicativo irá gerenciar o agendamento dos atendimentos e a personalização do atendimento (dia, horário, profissional de preferência da usuária, tipo/cor da esmaltação, valores dos serviços). <br>
 <br>
@@ -17,3 +15,4 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 💟VALORES DO SERVIÇOS: Tabela com os valores dos serviços oferecidos pela esmalteria. 
 
 </p>
+
