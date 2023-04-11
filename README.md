@@ -7,7 +7,7 @@
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 💟 AGENDAMENTO: Escolha do dia, horário, profissional de preferência da usuária, tipo/cor da esmaltação (personalização do atendimento). <br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 💟 GALERIA: Fotos de modelos de unhas (designers e tipos de unhas em gel). Catálogo com cores/tipos/marcas de esmalte. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 💟 GALERIA: Fotos de modelos de unhas (designers e tipos de unhas em gel). Catálogo com cores/tipos/marcas de esmalte. <br>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 💟 QUADRO DE FUNCIONÁRIAS: Lista com nome e foto e uma breve descrição de cada colaboradora. <br>
 <br>
