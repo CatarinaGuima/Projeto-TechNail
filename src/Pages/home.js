@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, Button, TextInput, Alert, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button, TextInput, FlatList } from 'react-native';
 import { useState, useEffect } from 'react';
 import { Entypo } from '@expo/vector-icons';
 
@@ -58,21 +58,13 @@ export function HomeScreen() {
 
   function FooterComponent() {
     return (
-      <>
-        <View style={styles.button}>
-          <Button
-            title={change}
-            color='#8AEAE5'
-            onPress={clicarBotao}
-          />
-          <View style={styles.login}></View>
-          <Button
-            title='Login'
-            color='#E33488'
-            onPress={() => Alert.alert('Login complete!')} />
-          <Text style={styles.legend}>Or login with Social Media</Text>
-        </View>
-      </>
+      <View style={styles.button}>
+        <Button
+          title={change}
+          color='#E33488'
+          onPress={clicarBotao}
+        />
+      </View>
     )
   }
 
@@ -139,17 +131,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginLeft: 100,
     width: 200,
-  },
-  login: {
-    marginTop: 20,
-  },
-  legend: {
-    color: '#C0C0C0',
-    fontSize: 12,
-    textAlign: 'center',
-    justifyContent: 'center',
-    marginTop: 10,
-    flexWrap: 'wrap',
   },
   icons: {
     flexDirection: 'column',

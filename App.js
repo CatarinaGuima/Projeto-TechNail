@@ -1,4 +1,4 @@
-import { AntDesign, Ionicons, MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,9 +8,6 @@ import { SettingsScreen } from './src/Pages/settings';
 import { ApointmentScreen } from './src/Pages/appointment';
 import { ProfileScreen } from './src/Pages/profile';
 import { WelcomeScreen } from './src/Pages/welcome';
-
-
-
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
