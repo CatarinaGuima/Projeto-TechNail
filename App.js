@@ -1,4 +1,3 @@
-import { AntDesign, MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,33 +7,10 @@ import { SettingsScreen } from './src/Pages/settings';
 import { ApointmentScreen } from './src/Pages/appointment';
 import { ProfileScreen } from './src/Pages/profile';
 import { WelcomeScreen } from './src/Pages/welcome';
+import { IconAppointment,IconHome,IconProfile,IconSettings } from './src/Componentes/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-
-function IconHome() {
-  return (
-    <AntDesign name="home" size={28} color="deeppink" />
-  );
-}
-
-function IconAppointment() {
-  return (
-    <MaterialCommunityIcons name="calendar-clock" size={28} color="deeppink" />
-  );
-}
-
-function IconProfile() {
-  return (
-    <Octicons name="person" size={28} color="deeppink" />
-  );
-}
-
-function IconSettings() {
-  return (
-    <AntDesign name="setting" size={28} color="deeppink" />
-  );
-}
 
 function MyTabs() {
   return (

@@ -61,15 +61,15 @@ export function WelcomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     layout: {
-        marginTop: 200,
-        marginLeft: 50,
-        marginBottom: 200,
+        marginTop: 240,
+        marginLeft: 72,
+        marginBottom: 240,
         justifyContent: 'center',
         alignItems: 'center',
-        height: '60%',
-        width: '80%',
+        height: '45%',
+        width: '70%',
         backgroundColor: '#FFF0F5',
-        borderRadius: 4,
+        borderRadius: 10,
     },
     title: {
         flexDirection: 'row',
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         paddingBottom: 10,
         borderRadius: 5,
+        backgroundColor: 'snow'
     },
     icon: {
         width: 20,

@@ -6,11 +6,11 @@ export function HomeScreen() {
 
   const [lista, setLista] = useState([
     { id: 1, uri: 'https://cdn-icons-png.flaticon.com/512/3789/3789889.png', name: 'Nails' },
-    { id: 2, uri: 'https://cdn-icons-png.flaticon.com/512/942/942759.png', name: 'Appointment' },
-    { id: 3, uri: 'https://cdn-icons-png.flaticon.com/512/1375/1375106.png', name: 'Gallery' },
-    { id: 4, uri: 'https://cdn-icons-png.flaticon.com/512/2225/2225218.png', name: 'Prices' },
-    { id: 5, uri: 'https://cdn-icons-png.flaticon.com/512/2830/2830514.png', name: 'Employees' },
-    { id: 6, uri: 'https://cdn1.iconfinder.com/data/icons/creative-process-14/512/Review-512.png', name: 'Reviews' },
+    { id: 2, uri: 'https://cdn-icons-png.flaticon.com/512/1375/1375106.png', name: 'Gallery' },
+    { id: 3, uri: 'https://cdn-icons-png.flaticon.com/512/2225/2225218.png', name: 'Prices' },
+    { id: 4, uri: 'https://cdn-icons-png.flaticon.com/512/2830/2830514.png', name: 'Employees' },
+    { id: 5, uri: 'https://cdn1.iconfinder.com/data/icons/creative-process-14/512/Review-512.png', name: 'Reviews' },
+    { id: 6, uri: 'https://cdn-icons-png.flaticon.com/512/4508/4508018.png', name: 'Talk to us' },
   ])
 
   const [searchText, setSearchText] = useState('');
@@ -35,12 +35,15 @@ export function HomeScreen() {
 
   function HeaderComponent() {
     return (
-      <>
+      <View style={styles.top}>
+        <Image
+          source={require('../Images/logo.png')}
+          style={styles.image} />
         <Text style={styles.hello}>Hello,</Text>
         <Text style={styles.category}>Select your category</Text>
         <View style={styles.look}>
-          <View>
-            <Entypo name="magnifying-glass" size={28} color="black" />
+          <View style={styles.lupa}>
+            <Entypo name="magnifying-glass" size={30} color="black" />
           </View>
           <View>
             <TextInput
@@ -52,7 +55,7 @@ export function HomeScreen() {
             </TextInput>
           </View>
         </View>
-      </>
+      </View>
     )
   }
 
@@ -81,7 +84,6 @@ export function HomeScreen() {
           </TouchableOpacity>
           <Text style={styles.name}>{item.name}</Text>
         </View>
-
       </>
     )
   }
@@ -102,24 +104,40 @@ export function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  top: {
+    flex: 1
+  },
+  image: {
+    marginBottom: -70,
+    width: '100%',
+    height: 200,
+  },
   hello: {
     marginTop: 2,
+    color: '#4F4F4F',
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
   },
   category: {
     fontSize: 18,
+    color: '#4F4F4F',
     textAlign: 'center',
   },
   look: {
-    marginTop: 40,
-    marginLeft: 180,
+    width: '100%',
+    marginTop: 50,
+    marginBottom: 20,
+    marginLeft: 150,
     flexDirection: 'row',
+  },
+  lupa: {
+    marginTop: 5,
+    marginRight: 2
   },
   search: {
     backgroundColor: 'white',
-    width: 180,
+    width: 200,
     height: 38,
     marginLeft: 5,
     borderRadius: 100 / 6,
@@ -157,9 +175,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF0F5',
+    marginLeft: 5,
+    marginRight: 5,
+
   },
   flatlist: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 1,
   },
 });
