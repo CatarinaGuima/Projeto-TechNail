@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, Button, TextInput, Fla
 import { useState, useEffect } from 'react';
 import { Entypo } from '@expo/vector-icons';
 
-export function HomeScreen() {
+export function HomeScreen({ navigation }) {
 
   const [lista, setLista] = useState([
     { id: 1, uri: 'https://cdn-icons-png.flaticon.com/512/3789/3789889.png', name: 'Nails' },
@@ -18,6 +18,9 @@ export function HomeScreen() {
   const [change, setChange] = useState('Register');
   const clicarBotao = () => {
     setChange('Registered');
+  }
+  const clicarBotao2 = () => {
+    navigation.navigate('Reviews');
   }
 
   useEffect(() => {
@@ -39,7 +42,7 @@ export function HomeScreen() {
         <Image
           source={require('../Images/logo.png')}
           style={styles.image} />
-        <Text style={styles.hello}>Hello,</Text>
+        <Text style={styles.hello}>Welcome,</Text>
         <Text style={styles.category}>Select your category</Text>
         <View style={styles.look}>
           <View style={styles.lupa}>
@@ -75,11 +78,13 @@ export function HomeScreen() {
     return (
       <>
         <View style={styles.icons}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={clicarBotao2}>
             <View style={styles.item}>
               <Image
                 style={styles.icon}
-                source={{ uri: item.uri }} />
+                source={{ uri: item.uri }}
+              />
             </View>
           </TouchableOpacity>
           <Text style={styles.name}>{item.name}</Text>
@@ -89,16 +94,17 @@ export function HomeScreen() {
   }
 
   return (
-    <><View style={styles.container}>
-      <FlatList
-        style={styles.flatlist}
-        numColumns={3}
-        keyExtractor={(item) => item.id}
-        data={list}
-        ListHeaderComponent={HeaderComponent}
-        renderItem={ItemComponent}
-        ListFooterComponent={FooterComponent} />
-    </View>
+    <>
+      <View style={styles.container}>
+        <FlatList
+          style={styles.flatlist}
+          numColumns={3}
+          keyExtractor={(item) => item.id}
+          data={list}
+          ListHeaderComponent={HeaderComponent}
+          renderItem={ItemComponent}
+          ListFooterComponent={FooterComponent} />
+      </View>
     </>
   );
 }
