@@ -29,7 +29,7 @@ function MyStacks() {
       <Stack.Navigator initialRouteName='Welcome' screenOptions={{ headerShown: false, headerTitleAlign: 'center' }} >
         <Stack.Screen name='Welcome' component={WelcomeScreen} />
         <Stack.Screen name='Menu' component={MyTabs} />
-        <Stack.Screen name='Reviews' component={ReviewsScreen} screenOptions={{ headerShown: true, headertitle: 'Reviews', headerTitleAlign: 'center'  }} />
+        <Stack.Screen name='Reviews' component={ReviewsScreen} options={{ headerShown: true, headerTitleAlign: 'center' }} />
       </Stack.Navigator>
     </NavigationContainer>
   )

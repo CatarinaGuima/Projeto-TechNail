@@ -16,9 +16,9 @@ export function NovosItens({ props, funcao }) {
 
 const styles = StyleSheet.create({
     postagem: {
-        width: '80%',
-        alignSelf: 'center',
-        backgroundColor: '#FDF5E6',
+        width: '100%',
+        alignSelf: 'flex-start',
+        backgroundColor: '#FFF',
         padding: 16,
         marginTop: 16,
         borderColor: '#bbb',

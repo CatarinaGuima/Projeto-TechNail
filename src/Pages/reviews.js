@@ -6,9 +6,9 @@ import { AdicionarItem } from '../Componentes/AdicionarItem';
 export function ReviewsScreen() {
 
     const [lista, setLista] = useState([
-        { texto: "comprar café", key: 1 },
-        { texto: "criar um app", key: 2 },
-        { texto: "jogar video game", key: 3 },
+        {key: 1, texto: "Amei o atendimento!!!" },
+        {key: 2, texto: "Melhores profisionais 💗" },
+        {key: 3, texto: "Muito satisfeita." },
 
     ]);
 
@@ -20,6 +20,7 @@ export function ReviewsScreen() {
             ];
         })
     }
+
 
     const apertarItem = (key) => {
         setLista(
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
         flex: 1,
         height: '100%',
         alignItems: 'center',
+        backgroundColor: '#FFF0F5'
     },
     conteudo: {
         padding: 40,

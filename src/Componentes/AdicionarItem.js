@@ -13,7 +13,7 @@ export function AdicionarItem({ funcao }) {
         <View style={styles.search}>
             <TextInput
                 style={styles.input}
-                placeholder='Adicionar uma tarefa...'
+                placeholder='Digite sua mensagem aqui...'
                 onChangeText={pegarMudanca}
                 autoCorrect={true}
             />
@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     search: {
         flexDirection: 'row',
         width: '100%',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     input: {
-        marginBottom: 10,
-        backgroundColor: '#FFF8EE',
+        height: 60,
+        backgroundColor: '#FFF',
         paddingHorizontal: 8,
         paddingVertical: 6,
         borderWidth: 1,
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
         marginRight: 25
     },
     button: {
-        backgroundColor: 'lightblue',
+        marginTop: 10,
+        backgroundColor: '#FF1493',
         width: '12%',
         height: 40,
         borderWidth: 1,
