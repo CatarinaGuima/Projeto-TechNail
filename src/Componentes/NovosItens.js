@@ -5,10 +5,10 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 export function NovosItens({ props, funcao }) {
     return (
-        <TouchableOpacity onPress={() => funcao(props.key)}>
+        <TouchableOpacity onPress={() => funcao(props.id)}>
             <View style={styles.postagem}>
                 <MaterialIcons name='delete' size={22} color={'lightpink'} />
-                <Text style={styles.texto}>{props.texto}</Text>
+                <Text style={styles.texto}>{props.comentarios}</Text>
             </View>
         </TouchableOpacity>
     )

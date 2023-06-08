@@ -1,26 +1,31 @@
 import { View, StyleSheet, FlatList } from 'react-native';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NovosItens } from '../Componentes/NovosItens';
 import { AdicionarItem } from '../Componentes/AdicionarItem';
+import Axios from 'axios';
 
 export function ReviewsScreen() {
 
-    const [lista, setLista] = useState([
-        {key: 1, texto: "Amei o atendimento!!!" },
-        {key: 2, texto: "Melhores profisionais 💗" },
-        {key: 3, texto: "Muito satisfeita." },
+    const [lista, setLista] = useState();
 
-    ]);
+    //READ
+    useEffect(() => {
+        Axios.get("http://192.168.0.8:3001/comentarios").then((response) =>{
+                setLista(response.data)
+            }
+        )
+    }, [lista])
 
+    //CREATE
     const submeterInformacao = (texto) => {
-        setLista((prevLista) => {
-            return [
-                { texto: texto, key: Math.random().toString() },
-                ...prevLista
-            ];
-        })
+        Axios.post("http://192.168.0.8:3001/comentarios", {comentarios: texto})
     }
 
+    //DELETE
+    const deletarComentario = (key) => {
+        Axios.delete(`http://192.168.0.8:3001/comentarios/${key}`,
+        )
+    }
 
     const apertarItem = (key) => {
         setLista(
@@ -38,7 +43,7 @@ export function ReviewsScreen() {
                     <FlatList
                         data={lista}
                         renderItem={({ item }) => (
-                            <NovosItens props={item} funcao={apertarItem} />
+                            <NovosItens props={item} funcao={deletarComentario} />
                         )}
                     />
                 </View>
