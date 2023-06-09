@@ -17,7 +17,7 @@ function MyTabs() {
     <Tab.Navigator screenOptions={{ tabBarActiveTintColor: 'deeppink', tabBarInactiveTintColor: 'black' }}>
       <Tab.Screen name='Home' component={HomeScreen} options={{ title: 'Home', headerTitleAlign: 'center', tabBarLabel: 'Home', tabBarIcon: IconHome }} />
       <Tab.Screen name='Appointment' component={ApointmentScreen} options={{ headerShown: false, tabBarLabel: 'Agendamento', tabBarIcon: IconAppointment }} />
-      <Tab.Screen name='Profile' component={ProfileScreen} options={{ headerShown: false, tabBarLabel: 'Perfil', tabBarIcon: IconProfile }} />
+      <Tab.Screen name='Profile' component={ProfileScreen} options={{ headerShown: true,  title: "Perfil", headerTitleAlign: 'center', tabBarLabel: 'Perfil', tabBarIcon: IconProfile }} />
       <Tab.Screen name='Settings' component={SettingsScreen} options={{ title: "Configurações", headerTitleAlign: 'center', tabBarLabel: 'Configurações', tabBarIcon: IconSettings }} />
     </Tab.Navigator>
   );
