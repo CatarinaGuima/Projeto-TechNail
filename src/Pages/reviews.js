@@ -23,16 +23,7 @@ export function ReviewsScreen() {
 
     //DELETE
     const deletarComentario = (key) => {
-        Axios.delete(`http://192.168.0.8:3001/comentarios/${key}`,
-        )
-    }
-
-    const apertarItem = (key) => {
-        setLista(
-            (prevLista) => {
-                return prevLista.filter(texto => texto.key != key);
-            }
-        )
+        Axios.delete(`http://192.168.0.8:3001/comentarios/${key}`,)
     }
 
     return (
