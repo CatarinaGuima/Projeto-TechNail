@@ -16,7 +16,12 @@
 💟VALORES DO SERVIÇOS: Tabela com os valores dos serviços oferecidos pela esmalteria. 
 </p>
 
-https://github.com/CatarinaGuima/Projeto-TechNail/assets/110750750/0947f694-c5b9-4112-88fe-be11252c6472
+https://github.com/CatarinaGuima/Projeto-TechNail/assets/110750750/0947f694-c5b9-4112-88fe-be11252c6472  
+
+https://github.com/CatarinaGuima/Projeto-TechNail/assets/110750750/84e68a9b-d6f2-431a-957d-a66f88ea33e1
+
+
+
 
 ---
 
